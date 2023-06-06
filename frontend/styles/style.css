@@ -1,0 +1,23 @@
+/* classes que serão usadas globalmente */
+.text-frota {
+    color: #009538 !important;
+}
+.btn-frota {
+    color: #fff !important;
+    background-color: #009538 !important;
+}
+.btn-outline-frota {
+    color: #009538 !important;
+    border-color: #009538 !important;
+}
+.text-frota-secondary {
+    color: #44875D !important;
+}
+.btn-frota-secondary {
+    color: #fff !important;
+    background-color: #44875D !important;
+}
+.btn-outline-frota-secondary {
+    color: #44875D !important;
+    border-color: #44875D !important;
+}
