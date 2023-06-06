@@ -1,14 +1,17 @@
 import express from "express";
 import { addUser, deleteUser, getUsers, updateUser } from "../controllers/user.js";
+import bodyParser from "body-parser";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get("/", getUsers)
+router.use(bodyParser.urlencoded({ extended: false }));
 
-router.post("/", addUser)
+router.get("/", getUsers);
 
-router.put("/:id", updateUser)
+router.post("/", addUser);
 
-router.delete("/:id", deleteUser)
+router.put("/:id", updateUser);
 
-export default router
+router.delete("/:id", deleteUser);
+
+export default router;

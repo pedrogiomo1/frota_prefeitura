@@ -19,23 +19,31 @@
       <div class="h1 text-frota" style="font-weight: bolder;">Cadastrar</div>
       <img src="assets/logo-prefeitura.png" width="75px" height="90px" alt="logo">
     </div>
-    <form>
+    <form action="http://localhost:8800" method="post">
       <div class="form-group pt-3">
         <label for="registration">Matrícula</label>
-        <input type="text" class="form-control" id="registration" placeholder="Digite sua matícula:" />
+        <input type="text" class="form-control" name="matricula" placeholder="Digite sua matícula:" />
         <small class="form-text text-muted">Nós não compartilharemos suas informações com ninguem :)</small>
       </div>
       <div class="form-group pt-2">
+        <label for="registration">Email</label>
+        <input type="text" class="form-control" name="email" placeholder="Digite seu email:" />
+      </div>
+      <div class="form-group pt-2">
         <label for="password">Senha</label>
-        <input type="password" class="form-control" placeholder="Digite sua senha:" />
+        <input type="text" class="form-control" name="senha" placeholder="Digite sua senha:" />
       </div>
       <div class="d-flex justify-content-between pt-3">
         <a type="button" class="btn btn-outline-frota col-4" href="login.html">
           Voltar
         </a>
-        <a type="submit" class="btn btn-frota col-4" href="cars_list.html">
+        <button
+          type="submit"
+          class="btn btn-frota col-4"
+        >
+          <!-- href="cars_list.html" -->
           Confirmar
-        </a>
+        </button>
       </div>
     </form>
   </div>
