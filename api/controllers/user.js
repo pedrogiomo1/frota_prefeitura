@@ -13,10 +13,11 @@ export const getUsers = (_, res) => {
 export const addUser = (req, res) => {
   console.log(req.body);
   const q =
-    "INSERT INTO users(`matricula`, `email`, `senha`) VALUES(?)";
+    "INSERT INTO users(`matricula`, `nome`, `email`, `senha`) VALUES(?)";
 
   const values = [
     req.body.matricula,
+    req.body.nome,
     req.body.email,
     req.body.senha,
   ];
@@ -30,15 +31,16 @@ export const addUser = (req, res) => {
 
 export const updateUser = (req, res) => {
   const q =
-    "UPDATE users SET `matricula` = ?, `email` = ?, `senha` = ?, WHERE `id_user` = ?";
+    "UPDATE users SET `matricula` = ?, `nome` = ?, `email` = ?, `senha` = ?, WHERE `matricula` = ?";
 
   const values = [
     req.body.matricula,
+    req.body.nome,
     req.body.email,
     req.body.senha,
   ];
 
-  db.query(q, [...values, req.params.id], (err) => {
+  db.query(q, [...values, req.params.matricula], (err) => {
     if (err) return res.json(err);
 
     return res.status(200).json("Usuário atualizado com sucesso.");
@@ -46,9 +48,9 @@ export const updateUser = (req, res) => {
 };
 
 export const deleteUser = (req, res) => {
-  const q = "DELETE FROM users WHERE `id` = ?";
+  const q = "DELETE FROM users WHERE `matricula` = ?";
 
-  db.query(q, [req.params.id], (err) => {
+  db.query(q, [req.params.matricula], (err) => {
     if (err) return res.json(err);
 
     return res.status(200).json("Usuário deletado com sucesso.");

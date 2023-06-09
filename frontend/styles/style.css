@@ -1,23 +1,49 @@
 /* classes que serão usadas globalmente */
 .text-frota {
-    color: #009538 !important;
-}
-.btn-frota {
-    color: #fff !important;
-    background-color: #009538 !important;
-}
-.btn-outline-frota {
-    color: #009538 !important;
-    border-color: #009538 !important;
+    color: #009538;
 }
 .text-frota-secondary {
-    color: #44875D !important;
+    color: #44875D;
 }
-.btn-frota-secondary {
-    color: #fff !important;
-    background-color: #44875D !important;
+
+.btn-frota {
+    color: #fff;
+    background-color: #009538;
 }
-.btn-outline-frota-secondary {
-    color: #44875D !important;
-    border-color: #44875D !important;
+.btn-frota:hover {
+    color: #fff;
+    background-color: #006a29;
+}
+.btn-outline-frota {
+    color: #009538;
+    border-color: #009538;
+}
+.btn-outline-frota:hover {
+    color: #009538;
+    border-color: #009538;
+    background-color: #e8e8e8;
+}
+
+/* Classes do sidebar */
+#nav-menu {
+    background-color: #009538;
+    color:#fff;
+    border-radius: 0px 12px 12px 0px;
+    font-size: 22px;
+}
+.nav-item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-item:hover {
+    background-color: #006a29;
+}
+
+/* Classes do header */
+header {
+    background-color: #fff;
+    height: 15vh;
+    box-shadow: inset 0px -10px 10px -10px rgba(0, 0, 0, 0.5);
 }

@@ -12,121 +12,135 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./styles/style.css">
 </head>
-<div class="d-flex align-items-center flex-column pt-5" style="height: 100vh;">
-  <div class="d-block">
-    <div class="h1 text-frota align-self-left">Listagem de Veículos</div>
-    <div class="py-3">
-      <form class="card py-0 px-3 shadow">
-        <span class="fw-bold">Filtros</span>
-        <div class="row pt-1">
-          <div class="form-group col-2">
-            <label for="Modelo">Modelo</label>
-            <input type="text" class="form-control" id="registration" />
-          </div>
-          <div class="form-group col-2">
-            <label for="Modelo">Placa</label>
-            <input type="text" class="form-control" id="registration" />
-          </div>
-          <div class="form-group col-2">
-            <label for="Modelo">Ano</label>
-            <input type="text" class="form-control" id="registration" />
-          </div>
-          <div class="form-group col-2">
-            <label for="Modelo">Status</label>
-            <select class="form-control">
-              <option value="DISPONIVEL">DISPONIVEL</option>
-              <option value="INDISPONIVEL">INDISPONIVEL</option>
-              <option value="MANUTENCAO">EM MANUTENCAO</option>
-            </select>
-          </div>
-          <div class="form-group col-2">
-            <label for="">Período de tempo</label>
-            <div class="input-group date" data-provide="datepicker">
-              <input type="text" class="form-control">
-              <div class="input-group-addon">
-                <span class="glyphicon glyphicon-th"></span>
-              </div>
-            </div>
-          </div>
-          <div class="form-group col-2">
-            <label for="">Fim do Periodo</label>
-            <div class="input-group date" data-provide="datepicker">
-              <input type="text" class="form-control">
-              <div class="input-group-addon">
-                <span class="glyphicon glyphicon-th"></span>
-              </div>
-            </div>
+<header>
+  <img src="assets/logo-prefeitura-lateralizada.png" class="p-1" alt="logo" height="100vh"/>
+</header>
+<div class="container-fluid">
+  <div class="row" style="height: 85vh;">
+    <!-- Sidebar -->
+    <div class="col-2 p-0" id="nav-menu">
+      <ul class="nav flex-column gap-2 w-100 pt-4">
+        <li class="nav-item ps-4 fw-bold py-2" style="text-decoration: underline;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-car-front-fill" viewBox="0 0 16 16">
+            <path d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.807.807 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM2.906 5.189a.51.51 0 0 0 .497.731c.91-.073 3.35-.17 4.597-.17 1.247 0 3.688.097 4.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 11.691 3H4.309a.5.5 0 0 0-.447.276L2.906 5.19Z"/>
+          </svg>
+          Veículos
+
+        </li>
+        <li class="nav-item ps-4 py-2" onclick="redirectTo('./drivers_list.html')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-person-vcard-fill" viewBox="0 0 16 16">
+            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm9 1.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4a.5.5 0 0 0-.5.5ZM9 8a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4A.5.5 0 0 0 9 8Zm1 2.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 0-1h-3a.5.5 0 0 0-.5.5Zm-1 2C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 0 2 13h6.96c.026-.163.04-.33.04-.5ZM7 6a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z"/>
+          </svg>
+          Condutores
+        </li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="col-10 px-5">
+      <div class="container d-flex flex-column pt-3">
+        <div class="d-block">
+          <div class="h2 text-frota align-self-left">Veículos</div>
+          <div class="card pt-4 shadow">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Modelo</th>
+                  <th scope="col">Placa</th>
+                  <th scope="col">Ano</th>
+                  <th scope="col">Quilometragem</th>
+                  <th scope="col">Status (hoje)</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Onix</td>
+                  <td>abc-1234</td>
+                  <td>2019</td>
+                  <td>100.000 km</td>
+                  <td class="text-success fw-bold">DISPONIVEL</td>
+                  <td>
+                    <button type="button" class="btn btn-sm btn-frota">Reservar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Argo</td>
+                  <td>cba-321</td>
+                  <td>2022</td>
+                  <td>53.000 km</td>
+                  <td class="text-danger fw-bold">INDISPONIVEL</td>
+                  <td>
+                    <button type="button" class="btn btn-sm btn-frota">Reservar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Sandero</td>
+                  <td>xyz-321</td>
+                  <td>2020</td>
+                  <td>35.000 km</td>
+                  <td class="text-warning fw-bold">EM MANUTENCAO</td>
+                  <td>
+                    <button type="button" class="btn btn-sm btn-frota">Reservar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Onix</td>
+                  <td>abc-1234</td>
+                  <td>2019</td>
+                  <td>22.000 km</td>
+                  <td class="text-success fw-bold">DISPONIVEL</td>
+                  <td>
+                    <button type="button" class="btn btn-sm btn-frota">Reservar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Argo</td>
+                  <td>cba-321</td>
+                  <td>2022</td>
+                  <td>15.000 km</td>
+                  <td class="text-danger fw-bold">INDISPONIVEL</td>
+                  <td>
+                    <button type="button" class="btn btn-sm btn-frota">Reservar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Sandero</td>
+                  <td>xyz-321</td>
+                  <td>2020</td>
+                  <td>87.000 km</td>
+                  <td class="text-warning fw-bold">EM MANUTENCAO</td>
+                  <td>
+                    <button type="button" class="btn btn-sm btn-frota">Reservar</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
-      </form>
-    </div>
-    <div class="card pt-4 shadow">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Modelo</th>
-            <th scope="col">Placa</th>
-            <th scope="col">Ano</th>
-            <th scope="col">Status (hoje)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Onix</td>
-            <td>abc-1234</td>
-            <td>2019</td>
-            <td class="text-success fw-bold">DISPONIVEL</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Argo</td>
-            <td>cba-321</td>
-            <td>2022</td>
-            <td class="text-danger fw-bold">INDISPONIVEL</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Sandero</td>
-            <td>xyz-321</td>
-            <td>2020</td>
-            <td class="text-warning fw-bold">EM MANUTENCAO</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Onix</td>
-            <td>abc-1234</td>
-            <td>2019</td>
-            <td class="text-success fw-bold">DISPONIVEL</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Argo</td>
-            <td>cba-321</td>
-            <td>2022</td>
-            <td class="text-danger fw-bold">INDISPONIVEL</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Sandero</td>
-            <td>xyz-321</td>
-            <td>2020</td>
-            <td class="text-warning fw-bold">EM MANUTENCAO</td>
-          </tr>
-        </tbody>
-      </table>
+      </div>
     </div>
   </div>
 </div>
 </body>
-
-</html>
+<script lang="js">
+  function redirectTo(url) {
+    window.location.href = url;
+  }
+</script>
 <style scoped>
   .card {
     padding: 1rem 2rem !important;
     border-radius: 15px !important;
-    width: 150vh !important;
   }
-</style>
+  </style>
+</html>
