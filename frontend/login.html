@@ -63,8 +63,25 @@
 
     if (countErrors == 3) {
       alert('Número máximo de tentaticas atingido, aguarde 30 segundos para tentar novamente!');
+
+      let timer = 30;
       document.getElementById("btn-submit").disabled = true;
-      setTimeout(() => document.getElementById("btn-submit").disabled = false, 30000);
+      setInterval(() => {
+        if (timer > 0) {
+          timer--;
+          console.log(timer);
+          console.log(document.getElementById("btn-submit").textContent);
+          document.getElementById("btn-submit").textContent = timer;
+        } else {
+          document.getElementById("btn-submit").textContent = "Entrar";
+        }
+      }, 1000);
+
+
+      setTimeout(() => {
+        document.getElementById("btn-submit").disabled = false, 30000;
+        countErrors = 0;
+      });
       return;
     }
 
